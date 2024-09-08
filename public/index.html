@@ -162,7 +162,7 @@
             );
         }
 
-        function getBudget() {
+        async function getBudget() {
             axios.get(`http://${location.hostname}:3000/budget`)
             .then(function (res) {
                 for (var i = 0; i < res.data.myBudget.length; i++) {
