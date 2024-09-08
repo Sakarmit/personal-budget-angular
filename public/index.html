@@ -132,11 +132,28 @@
             };
 
         function createChart() {
-            var ctx = document.getElementById('myChart').getContext('2d');
+            let chart = document.getElementById('myChart');
+            var ctx = chart.getContext('2d');
             var myPieChart = new Chart(ctx, {
                 type: 'pie',
                 data: dataSource
             });
+
+            // <!-- This is an A11y Change -->
+            let budgetValues = "";
+            for (let i = 0; i < dataSource.labels.length; i++) {
+                if (i != 0) {
+                    budgetValues += ', '
+                }
+                if (i == dataSource.labels.length - 1) {
+                    budgetValues += "and "
+                }
+                budgetValues += `$${dataSource.datasets[0].data[i]} for ${dataSource.labels[i]}`;
+            }
+
+            chart.setAttribute("aria-label", 
+                `Pie chart showing the distribution of expenses: ${budgetValues}`
+            );
         }
 
         function getBudget() {
