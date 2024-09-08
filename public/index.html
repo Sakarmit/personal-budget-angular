@@ -12,7 +12,7 @@
 <body>
 
 <a href="#main" class="skip">Skip to content</a>
-
+    
     <nav>
         <ul>
             <li><a href=".">Home</a></li>
@@ -22,14 +22,15 @@
         </ul>
     </nav>
 
-    <div class="hero">
+    <!-- This is a Semantic HTML Change -->
+    <header class="hero">
         <h1>Personal Budget</h1>
         <h2>A personal-budget management app</h2>
-    </div>
+    </header>
 
     <main class="center" id="main">
-
-        <div class="page-area">
+        <!-- This is a Semantic HTML Change -->
+        <section class="page-area">
 
             <article>
                 <h1>Stay on track</h1>
@@ -88,14 +89,18 @@
                 </p>
             </article>
     
+            
             <article>
                 <h1>Chart</h1>
-                <p>
-                    <canvas id="myChart" width="400" height="400"></canvas>
-                </p>
+                <!-- This is a Semantic HTML Change -->
+                <figure>
+                    <p>
+                        <canvas id="myChart" width="400" height="400"></canvas>
+                    </p>
+                </figure>
             </article>
 
-        </div>
+        </section>
 
     </main>
 
