@@ -1,0 +1,44 @@
+{
+    "myBudget": [
+        {
+            "title": "Eat out",
+            "budget": 25
+        },
+        {
+            "title": "Rent",
+            "budget": 275
+        },
+        {
+            "title": "Grocery",
+            "budget": 110
+        },
+        {
+            "title": "Gas",
+            "budget": 120
+        },
+        {
+            "title": "Maintenance",
+            "budget": 100
+        },
+        {
+            "title": "Digital Ocean",
+            "budget": 10
+        },
+        {
+            "title": "Insurance",
+            "budget": 145
+        },
+        {
+            "title": "Pets",
+            "budget": 220
+        },
+        {
+            "title": "Subscription",
+            "budget": 25
+        },
+        {
+            "title": "Other",
+            "budget": 200
+        }
+    ]
+}
