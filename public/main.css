@@ -107,3 +107,15 @@ main article {
         margin: 10px;
     }
 }
+
+/*Donut Pie Chart*/
+path.slice {
+	stroke-width:2px;
+}
+
+polyline {
+	opacity: .3;
+	stroke: black;
+	stroke-width: 2px;
+	fill: none;
+}
