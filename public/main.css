@@ -109,7 +109,7 @@ main article {
     }
 }
 
-/*Donut Pie Chart*/
+/*Donut Pie Chart Credit: https://gist.github.com/dbuezas/9306799*/
 path.slice {
 	stroke-width:2px;
 }
