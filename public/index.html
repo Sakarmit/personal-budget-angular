@@ -168,7 +168,7 @@
             );
         }
 
-        async function getBudget() {
+        function getBudget() {
             axios.get(`http://${location.hostname}:3000/budget`)
             .then(function (res) {
                 for (var i = 0; i < res.data.myBudget.length; i++) {
@@ -183,11 +183,10 @@
 
         // <!-- This is an SEO Change -->
         // Improve initial load time
-        async function loadHeaderBackground() {
+        window.addEventListener('load', () => {
             document.querySelector("header.hero").style.backgroundImage = "url('bg.png')";
-        };
+        });       
 
-        loadHeaderBackground();
     </script>
 
 </body>
