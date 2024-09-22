@@ -12,6 +12,7 @@ import { AboutComponent } from './about/about.component';
 import { LoginComponent } from './login/login.component';
 import { P404Component } from './p404/p404.component';
 import { provideHttpClient } from '@angular/common/http';
+import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { provideHttpClient } from '@angular/common/http';
     ArticleComponent,
     AboutComponent,
     LoginComponent,
-    P404Component
+    P404Component,
+    BreadcrumbsComponent
   ],
   imports: [
     BrowserModule,
