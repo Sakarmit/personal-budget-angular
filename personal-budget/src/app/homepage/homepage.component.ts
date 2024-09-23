@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import {Chart, ChartItem} from 'chart.js/auto';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'pb-homepage',
@@ -8,40 +8,18 @@ import {Chart, ChartItem} from 'chart.js/auto';
   styleUrl: './homepage.component.scss'
 })
 export class HomepageComponent implements OnInit{
-  public dataSource = {
-    datasets: [
-      {
-        data: [] as number[],
-        backgroundColor: [
-          '#ffcd56',
-          '#ff6384',
-          '#36a2eb',
-          '#fd6b19',
-          '#800000',
-          '#9A6324',
-          '#fabed4',
-          '#ffd8b1',
-          '#3cb44b',
-          '#aaffc3'
-          ]
-      }
-    ],
-    labels: [] as string[]
-  };
 
-  constructor(private http: HttpClient) {
+  constructor(private dataService: DataService) {
 
   }
 
   ngOnInit(): void {
-    this.http.get(`http://${document.location.hostname}:3000/budget`)
-    .subscribe((res: any) => {
-      for (var i = 0; i < res.myBudget.length; i++) {
-        this.dataSource.datasets[0].data[i] = res.myBudget[i].budget;
-        this.dataSource.labels[i] = res.myBudget[i].title;
+    const loop = setInterval(() => {
+      if (this.dataService.dataSource.labels.length > 0) {
+        this.createChart();
+        clearInterval(loop);
       }
-      this.createChart();
-    });
+    }, 100);
   }
 
   createChart() {
@@ -49,7 +27,7 @@ export class HomepageComponent implements OnInit{
     if (chart) {
       var myPieChart = new Chart(chart, {
           type: 'pie',
-          data: this.dataSource
+          data: this.dataService.dataSource
       });
 
       // let budgetValues = "";

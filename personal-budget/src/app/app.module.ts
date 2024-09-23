@@ -14,6 +14,7 @@ import { P404Component } from './p404/p404.component';
 import { provideHttpClient } from '@angular/common/http';
 import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 import { ContactComponent } from './contact/contact.component';
+import { DataService } from './data.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { ContactComponent } from './contact/contact.component';
   ],
   providers: [
     provideClientHydration(),
-    provideHttpClient()
+    provideHttpClient(),
+    DataService
   ],
   bootstrap: [AppComponent]
 })
